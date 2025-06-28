@@ -1,42 +1,6 @@
 # WebScraper Pro - Full Stack Application
 
-
 WebScraper Pro is a comprehensive solution for web data extraction that transforms the tedious process of manually collecting information from websites into a streamlined, automated experience. Whether you're gathering product information from e-commerce sites, collecting news articles, or extracting job listings, this application provides the tools you need to efficiently harvest web data.
-
-### Key Capabilities:
-- **Intelligent Data Extraction**: Automatically identifies and extracts structured data using CSS selectors
-- **Multi-Page Scraping**: Handles pagination to scrape multiple pages automatically
-- **Flexible Configuration**: Customize scraping parameters, delays, and selectors for different websites
-- **Data Export**: Download results in JSON or CSV formats for further analysis
-- **Real-time Monitoring**: Track scraping progress and view comprehensive statistics
-- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
-
-### Use Cases:
-- **E-commerce Research**: Extract product prices, descriptions, and reviews
-- **Content Aggregation**: Collect articles, blog posts, and news content
-- **Market Analysis**: Gather competitor information and pricing data
-- **Job Market Research**: Extract job listings and company information
-- **Academic Research**: Collect data for research projects and analysis
-- **Lead Generation**: Extract contact information and business details
-
-## 🚀 Features
-
-### Frontend (React)
-- **Modern UI**: Beautiful gradient backgrounds and glass-morphism design
-- **Configuration Panel**: Set target websites, scraping parameters, and CSS selectors
-- **Results Dashboard**: View scraped data with statistics and export options
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Real-time Validation**: Form validation with error handling
-- **Export Options**: Download data in JSON or CSV format
-
-### Backend (Flask)
-- **Smart Data Extraction**: Uses BeautifulSoup for HTML parsing with intelligent element matching
-- **Multiple CSS Selectors**: Supports comma-separated selectors for better data coverage
-- **Pagination Support**: Automatically handles common pagination patterns
-- **Rate Limiting**: Configurable delays between requests to avoid being blocked
-- **Error Handling**: Robust exception handling with detailed logging
-- **CORS Support**: Configured for frontend integration
-- **Health Check**: Built-in health monitoring endpoint
 
 ## 🛠️ Tech Stack
 
@@ -137,32 +101,6 @@ flask run --host=0.0.0.0 --port=5000
 # Method 4: Using Python module execution
 python -m flask run --host=0.0.0.0 --port=5000
 ```
-
-## 🏗️ Project Structure
-
-```
-webscrapper/
-├── README.md              # This file
-├── package.json           # Frontend dependencies
-├── vite.config.ts         # Vite configuration
-├── tailwind.config.js     # Tailwind CSS configuration
-├── src/                   # Frontend source code
-│   ├── App.tsx           # Main application component
-│   ├── main.tsx          # Application entry point
-│   ├── index.css         # Global styles
-│   └── pages/
-│       ├── Config.tsx    # Configuration panel
-│       └── Results.tsx   # Results dashboard
-└── backend/              # Backend source code
-    ├── app.py            # Main Flask application
-    ├── run_server.py     # Server startup script
-    ├── requirements.txt  # Python dependencies
-    ├── test_scraper.py   # Unit tests
-    └── scraper/
-        ├── __init__.py   # Package initialization
-        └── scraper_engine.py # Core scraping logic
-```
-
 ## 🎯 Usage Guide
 
 ### 1. Configuration Setup
@@ -269,55 +207,6 @@ Create a `.env` file in the root directory:
 VITE_API_URL=http://localhost:5000
 ```
 
-## 🚀 Production Deployment
-
-### Frontend Deployment
-```bash
-# Build the frontend
-npm run build
-
-# The build output will be in the `dist/` directory
-# Deploy to any static hosting service:
-# - Vercel
-# - Netlify
-# - GitHub Pages
-# - AWS S3
-```
-
-### Backend Deployment
-
-#### Using Gunicorn (Recommended)
-```bash
-# Install Gunicorn
-pip install gunicorn
-
-# Run with Gunicorn
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
-
-#### Using Waitress (Windows)
-```bash
-# Install Waitress
-pip install waitress
-
-# Run with Waitress
-waitress-serve --host=0.0.0.0 --port=5000 app:app
-```
-
-#### Docker Deployment
-```dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-EXPOSE 5000
-
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
-```
-
 ## 🔍 Troubleshooting
 
 ### Common Issues
@@ -362,19 +251,5 @@ python --version
 # Check Node.js version
 node --version
 ```
-
-## 🔒 Security Features
-
-- **Frontend**: Input validation, URL sanitization, error handling
-- **Backend**: User-Agent rotation, request headers spoofing, rate limiting, timeout protection
-- **API**: CORS configuration, input validation, comprehensive error handling
-
-## 📊 Logging & Monitoring
-
-- **Backend**: Comprehensive logging with INFO, WARNING, and ERROR levels
-- **Frontend**: Console logging for debugging and error tracking
-- **Health Check**: Built-in endpoint for monitoring backend status
-
-
 
 **Note**: This is a full-stack application requiring both frontend and backend services to be running for full functionality. Make sure both services are properly configured and running.
